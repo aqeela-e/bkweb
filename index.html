@@ -360,37 +360,6 @@
         <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
         <script src="js/gmaps.min.js"></script>
 
-        <script type="text/javascript">
-            var map;
-            $(document).ready(function () {
-                map = new GMaps({
-                    el: '#ourmaps',
-                    lat: 3.139003,
-                    lng: 101.686855,
-                    scrollwheel: false
-                });
-
-                //locations request
-                map.getElevations({
-                    locations: [[3.139003, 101.686855]],
-                    callback: function (result, status) {
-                        if (status == google.maps.ElevationStatus.OK) {
-                            for (var i in result) {
-                                map.addMarker({
-                                    lat: result[i].location.lat(),
-                                    lng: result[i].location.lng(),
-                                    infoWindow: {
-                                        content: '<address class="tooltip_address"><b>Junky Burger</b><br />Solo Square, GF Fountain A02, Jl. Brigjend Slamet Riyadi No.451-455, Pajang, Laweyan, Kota Surakarta, Jawa Tengah 57146 57146 Solo Central Java <br /></address>'
-                                    }
-                                });
-                            }
-                        }
-                    }
-                });
-
-            });
-        </script>
-
 
         <!--main js-->
         <script type="text/javascript" src="js/main.js"></script>
